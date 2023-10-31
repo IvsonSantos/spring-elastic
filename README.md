@@ -40,5 +40,14 @@ docker cp es01:/usr/share/elasticsearch/config/certs/http_ca.crt .
 #### Make a REST API call to Elasticsearch to ensure the Elasticsearch container is running.
 ```sh
 curl --cacert http_ca.crt -u elastic:{ELASTIC_PASSWORD} https://localhost:9200
-
 ```
+
+#### Rodando o SONARQUBE do docker
+* https://docs.sonarsource.com/sonarqube/latest/try-out-sonarqube/
+
+```sh
+docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
+```
+http://localhost:9000
+admin / admin
+
